@@ -8,6 +8,7 @@ Resumen breve
 
 Estructura del paquete
 
+```bash
 ur5_robotiq_description/
 ├── CMakeLists.txt
 ├── include/
@@ -21,7 +22,7 @@ ur5_robotiq_description/
     ├── ur_with_gripper_base.urdf.xacro
     ├── ur_with_gripper_moveit.urdf.xacro
     └── ur_with_gripper_sim.urdf.xacro
-
+```
 Comentarios sobre la estructura
 - `urdf/` contiene los archivos fuente XACRO/URDF. Hay wrappers separados para distintos usos: base, MoveIt y simulación.
 - `simple_gripper.xacro` define el gripper de forma modular y se incluye desde los wrappers apropiados.
