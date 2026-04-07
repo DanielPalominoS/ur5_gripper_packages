@@ -74,8 +74,35 @@ ros2 launch ur5_robotiq_bringup sim_gz_sgb.launch.py
 source install/setup.bash
 ros2 launch ur5_robotiq_bringup view_rviz_ur_robotiq.launch.py
 ```
+## 5. Enviar trayectoria al brazo:
+```
+ros2 topic pub /scaled_joint_trajectory_controller/joint_trajectory trajectory_msgs/msg/JointTrajectory "
+joint_names: ['shoulder_pan_joint','shoulder_lift_joint','elbow_joint','wrist_1_joint','wrist_2_joint','wrist_3_joint']
+points:
+- positions: [0.0, -1.57, 1.57, -1.57, -1.57, 0.0]
+  time_from_start: {sec: 2, nanosec: 0}
+"
+```
 
-Notas y recomendaciones
+## Mover Griper.
+### Posición intermedia
+```
+ros2 topic pub /gripper_controller/commands \
+  std_msgs/msg/Float64MultiArray "{data: [0.02, 0.02]}"
+```
+### Posición cerrada.
+```
+ros2 topic pub /gripper_controller/commands \
+  std_msgs/msg/Float64MultiArray "{data: [0.004, 0.004]}"
+```
+
+### Posición abierta.
+```
+ros2 topic pub /gripper_controller/commands \
+  std_msgs/msg/Float64MultiArray "{data: [0.04, 0.04]}"
+```
+
+## 6. Notas y recomendaciones
 - Este paquete asume que la descripción del robot (URDF/XACRO y meshes) está disponible en `ur5_robotiq_description` u otro paquete instalado en el workspace.
 - Los nombres de archivos de `launch/` y `config/` son los reales en este repo; si añades nuevos lanzadores o parámetros, actualiza este README.
 
