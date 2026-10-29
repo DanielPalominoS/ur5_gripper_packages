@@ -215,7 +215,7 @@ def generate_launch_description():
         DeclareLaunchArgument(
             "rviz_config_file",
             default_value=PathJoinSubstitution([
-                FindPackageShare("ur_description"),
+                FindPackageShare("ur_bringup"),
                 "rviz",
                 "view_robot.rviz",
             ]),

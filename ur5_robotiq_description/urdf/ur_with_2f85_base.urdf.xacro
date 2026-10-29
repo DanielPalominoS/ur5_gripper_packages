@@ -38,7 +38,7 @@
       safety_k_position="20"
       force_abs_paths="true">
 
-    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <origin xyz="0 0 0" rpy="0 0 1.5707"/>
 
   </xacro:ur_robot>
 

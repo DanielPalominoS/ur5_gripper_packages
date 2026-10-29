@@ -3,7 +3,7 @@
 
   <!-- Include ONLY the base robot -->
 <xacro:include
-    filename="$(find ur5_robotiq_description)/urdf/ur_with_gripper_base.urdf.xacro"/>
+    filename="$(find ur5_robotiq_description)/urdf/ur_with_2f85_base.urdf.xacro"/>
 
 <link name="world"/>
 

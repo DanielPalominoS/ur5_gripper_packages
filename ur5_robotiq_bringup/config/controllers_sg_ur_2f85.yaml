@@ -9,7 +9,7 @@ controller_manager:
       type: ur_controllers/ScaledJointTrajectoryController
 
     gripper_controller:
-      type: position_controllers/JointGroupPositionController
+      type: position_controllers/GripperActionController
 
 
 scaled_joint_trajectory_controller:
@@ -47,7 +47,6 @@ scaled_joint_trajectory_controller:
 
 gripper_controller:
   ros__parameters:
-    joints:
-      - robotiq_85_left_knuckle_joint
-
-    interface_name: position
+    joint: robotiq_85_left_knuckle_joint
+    max_effort: 50.0
+    allow_stalling: true

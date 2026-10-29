@@ -55,7 +55,7 @@ Generar URDF a partir de XACRO (depuración)
 Puede expandir un XACRO a URDF para inspeccionar o depurar:
 
 ```bash
-ros2 run xacro xacro.py $(ros2 pkg prefix --share ur5_robotiq_description)/urdf/ur_with_gripper_sim.urdf.xacro > /tmp/robot.urdf
+ros2 run xacro xacro.py $(ros2 pkg prefix --share ur5_robotiq_description)/urdf/ur_with_gripper_sim.urdf.xacro name:=ur simulation_controllers:=dummy.yaml ros_namespace:= > /tmp/robot.urdf
 check_urdf /tmp/robot.urdf
 ```
 
